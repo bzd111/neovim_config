@@ -3,6 +3,7 @@ if empty($NVIM_HOME)
 endif
 
 source $NVIM_HOME/settings.vim
+source $NVIM_HOME/color.vim
 
 " see https://github.com/junegunn/vim-plug
 call plug#begin('$NVIM_HOME/plugged')

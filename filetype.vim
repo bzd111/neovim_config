@@ -9,10 +9,6 @@ augroup END
 autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
 
 
-"""""""""""""""""""""""""""" vim-vue settings """"""""""""""""""""""""""""
-autocmd FileType vue syntax sync fromstart
-
-
 """""""""""""""""""""""""""" vim-vue settings """""""""""""""""""""""""
 autocmd FileType vue syntax sync fromstart
 

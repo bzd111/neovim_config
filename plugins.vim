@@ -14,7 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " for insert mode completion
-" Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 
 " auto pair insert and delete
 Plug 'jiangmiao/auto-pairs'
@@ -34,3 +34,9 @@ Plug 'neomake/neomake'
 
 " highlight yanked region
 Plug 'machakann/vim-highlightedyank'
+
+" snippet engine
+Plug 'SirVer/ultisnips'
+
+" snippet template for ultisnips
+Plug 'honza/vim-snippets'

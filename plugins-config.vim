@@ -78,6 +78,7 @@ let g:airline_right_sep = '◀'
 """""""""""""""""""""""""""""supertab settings""""""""""""""""""""""""""
 " auto-close method preview window
 let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 
 """"""""""""""""""""""""""""nerdcommenter settings"""""""""""""""""""
@@ -128,11 +129,11 @@ let g:neoformat_try_formatprg = 1
 " runs all formatters for current buffer without tab to spaces conversion
 let b:neoformat_run_all_formatters = 1
 let b:neoformat_basic_format_retab = 0
-" let g:neoformat_python_black = {
-"            \ 'exe': 'black',
-"            \ 'stdin': 1,
-"            \ 'args': ['--line-length', '110', '-S', '-', '2>/dev/null'],
-"            \ }
+let g:neoformat_python_black = {
+           \ 'exe': 'black',
+           \ 'stdin': 1,
+            \ 'args': ['--line-length', '110', '-S', '-', '2>/dev/null'],
+            \ }
 
 
 """"""""""""""""""""""" nerdtree settings """"""""""""""""""""""""""
@@ -170,3 +171,8 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " do not highlight columns, it works bad for sublimemonokai
 " see https://goo.gl/wd68ex for more info
 let g:neomake_highlight_columns = 1
+
+
+""""""""""""""""""""""" UltiSnips settins  """"""""""""""""""""""""""
+let g:UltiSnipsSnippetsDir = $NVIM_HOME.'/UltiSnips'
+let g:UltiSnipsExpandTrigger="<c-j>"
