@@ -130,8 +130,8 @@ let g:neoformat_try_formatprg = 1
 let b:neoformat_run_all_formatters = 1
 let b:neoformat_basic_format_retab = 0
 let g:neoformat_python_black = {
-           \ 'exe': 'black',
-           \ 'stdin': 1,
+            \ 'exe': 'black',
+            \ 'stdin': 1,
             \ 'args': ['--line-length', '110', '-S', '-', '2>/dev/null'],
             \ }
 
@@ -176,3 +176,50 @@ let g:neomake_highlight_columns = 1
 """"""""""""""""""""""" UltiSnips settins  """"""""""""""""""""""""""
 let g:UltiSnipsSnippetsDir = $NVIM_HOME.'/UltiSnips'
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+
+""""""""""""""""""""""" ctrlp settins  """"""""""""""""""""""""""
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_switch_buffer = 'et'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll)$',
+            \ 'link': 'some_bad_symbolic_links',
+            \ }
+
+
+""""""""""""""""""""""" rainbow settins  """"""""""""""""""""""""""
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+            \    'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+            \    'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+            \    'guis': [''],
+            \    'cterms': [''],
+            \    'operators': '_,_',
+            \    'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+            \    'separately': {
+            \        '*': {},
+            \        'markdown': {
+            \            'parentheses_options': 'containedin=markdownCode contained',
+            \        },
+            \        'lisp': {
+            \            'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3']
+            \        },
+            \        'haskell': {
+            \            'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
+            \        },
+            \        'vim': {
+            \            'parentheses_options': 'containedin=vimFuncBody',
+            \        },
+            \        'perl': {
+            \            'syn_name_prefix': 'perlBlockFoldRainbow',
+            \        },
+            \        'stylus': {
+            \            'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'],
+            \        },
+            \        'css': 0,
+            \    }
+            \}

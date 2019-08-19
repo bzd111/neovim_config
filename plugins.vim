@@ -40,3 +40,12 @@ Plug 'SirVer/ultisnips'
 
 " snippet template for ultisnips
 Plug 'honza/vim-snippets'
+
+" Full path fuzzy file, buffer, mru, tag, ...
+Plug 'kien/ctrlp.vim'
+
+" fancy vim start screen
+Plug 'mhinz/vim-startify'
+
+" rainbow parentheses improved
+Plug 'luochen1990/rainbow'
