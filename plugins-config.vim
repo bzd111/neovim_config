@@ -164,9 +164,19 @@ call neomake#configure#automake('nrw', 50)
 highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
 let g:neomake_warning_sign={'text': '!', 'texthl': 'NeomakeErrorMsg'}
 
-" only enable pylint linter for python
+" only enable flake8 linter for python
 let g:neomake_python_enabled_makers = ['flake8']
+let g:neomake_python_flake8_maker = {
+            \ 'args': [ '--max-line-length=90'
+            \ ]
+            \ }
+
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:lint_types = [
+            \  'yaml.ansible', 'php', 'ruby', 'vim', 'sh', 'python',
+            \  'javascript', 'jsx', 'javascript.jsx', 'json', 'css',
+            \  'markdown', 'html', 'yaml'
+            \ ]
 
 " do not highlight columns, it works bad for sublimemonokai
 " see https://goo.gl/wd68ex for more info

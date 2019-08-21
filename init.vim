@@ -12,3 +12,4 @@ call plug#end()
 source $NVIM_HOME/plugins-config.vim
 
 source $NVIM_HOME/keys.vim
+source $NVIM_HOME/functions.vim
