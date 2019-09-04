@@ -7,6 +7,9 @@ Plug 'zchee/deoplete-jedi'
 " Python completion, goto definition etc.
 Plug 'davidhalter/jedi-vim'
 
+" Use release branch
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " status line
 Plug 'vim-airline/vim-airline'
 
@@ -14,7 +17,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " for insert mode completion
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 
 " auto pair insert and delete
 Plug 'jiangmiao/auto-pairs'
@@ -25,9 +28,11 @@ Plug 'scrooloose/nerdcommenter'
 " auto format tool
 Plug 'sbdchd/neoformat'
 
-
 " file explorer for vim
 Plug 'scrooloose/nerdtree'
+
+" NERDTree and tabs together in Vim, painlessly
+Plug 'jistr/vim-nerdtree-tabs'
 
 " syntax check and make
 Plug 'neomake/neomake'
@@ -49,3 +54,6 @@ Plug 'mhinz/vim-startify'
 
 " rainbow parentheses improved
 Plug 'luochen1990/rainbow'
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

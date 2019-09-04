@@ -12,7 +12,8 @@ let g:deoplete#sources#jedi#server_timeout = 50
 """"""""""""""""""""""""jedi-vim settings"""""""""""""""""""
 " disable autocompletion, cause we use deoplete for completion
 let g:jedi#completions_enabled = 0
-
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#completions_command = "<Tab>"
 " open the go-to function in split, not another buffer
 " let g:jedi#use_splits_not_buffers = "right"
 
@@ -168,7 +169,10 @@ let g:neomake_highlight_columns = 1
 
 """"""""""""""""""""""" UltiSnips settins  """"""""""""""""""""""""""
 let g:UltiSnipsSnippetsDir = $NVIM_HOME.'/UltiSnips'
+" let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
 """"""""""""""""""""""" ctrlp settins  """"""""""""""""""""""""""
@@ -184,7 +188,7 @@ let g:ctrlp_custom_ignore = {
             \ }
 
 
-""""""""""""""""""""""" rainbow settins  """"""""""""""""""""""""""
+""""""""""""""""""""""" rainbow settings  """"""""""""""""""""""""""
 let g:rainbow_active = 1
 let g:rainbow_conf = {
             \    'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
@@ -216,3 +220,12 @@ let g:rainbow_conf = {
             \        'css': 0,
             \    }
             \}
+
+
+""""""""""""""""""""" vim-go settings """""""""""""""""""""
+let g:go_highlight_structs = 0
+let g:go_highlight_interfaces = 0
+let g:go_highlight_operators = 0
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 0
+
