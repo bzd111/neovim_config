@@ -1,6 +1,7 @@
 let mapleader = ','
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
+set guifont=Monaco:h40
 
 " activate syntax
 syntax on
@@ -69,3 +70,18 @@ set mouse=a
 
 " do not show mode on last line because airline can show it already
 set noshowmode
+
+" ignore case
+set ignorecase
+
+" switch buffer
+map H :bn<cr>
+map L :bp<cr>
+map D :bd<cr>
+
+" switch windows
+nnoremap <C-[> <C-w>h
+nnoremap <C-]> <C-w>l
+
+" clipboard sharing
+set clipboard=unnamed

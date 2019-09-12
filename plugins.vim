@@ -57,3 +57,6 @@ Plug 'luochen1990/rainbow'
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" An ack/ag/pt/rg powered code search and view tool
+Plug 'dyng/ctrlsf.vim'

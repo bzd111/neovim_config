@@ -122,7 +122,6 @@ let g:neoformat_python_black = {
 
 """"""""""""""""""""""" nerdtree settings """"""""""""""""""""""""""
 " toggle nerdtree window and keep cursor in file window
-nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>:wincmd p<CR>
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=30
 
@@ -225,7 +224,12 @@ let g:rainbow_conf = {
 """"""""""""""""""""" vim-go settings """""""""""""""""""""
 let g:go_highlight_structs = 0
 let g:go_highlight_interfaces = 0
-let g:go_highlight_operators = 0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 0
-
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_get_update = 0
