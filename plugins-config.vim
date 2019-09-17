@@ -148,7 +148,7 @@ highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
 let g:neomake_warning_sign={'text': '!', 'texthl': 'NeomakeErrorMsg'}
 
 " only enable flake8 linter for python
-let g:neomake_python_enabled_makers = ['flake8']
+let g:neomake_python_enabled_makers = ['flake8', 'mypy']
 let g:neomake_python_flake8_maker = {
             \ 'args': [ '--max-line-length=90'
             \ ]
