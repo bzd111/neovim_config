@@ -66,7 +66,7 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 set scrolloff=5
 
 " use mouse to select window and resizing window, etc
-set mouse=a
+set mouse=r
 
 " do not show mode on last line because airline can show it already
 set noshowmode

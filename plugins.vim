@@ -60,3 +60,17 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " An ack/ag/pt/rg powered code search and view tool
 Plug 'dyng/ctrlsf.vim'
+
+" Wakatime text editor plugins
+Plug 'wakatime/vim-wakatime'
+
+" VIM MARKDOWN RUNTIME FILES
+Plug 'plasticboy/vim-markdown'
+
+" Plug 'lvht/tagbar-markdown', {'for': ['markdown']} " List TOC
+
+" markdown toc
+Plug 'mzlogin/vim-markdown-toc'
+
+" markdown preview
+Plug 'iamcco/markdown-preview.nvim', {'for': 'markdown', 'do': 'cd app & yarn install'}
