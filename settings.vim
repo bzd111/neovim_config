@@ -85,3 +85,9 @@ nnoremap <C-]> <C-w>l
 
 " clipboard sharing
 set clipboard=unnamed
+
+" windows keymap
+nnoremap <C-K> <C-W>j
+nnoremap <C-J> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h

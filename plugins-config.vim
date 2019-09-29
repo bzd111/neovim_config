@@ -137,6 +137,9 @@ let NERDTreeStatusline="%{exists('b:NERDTree')?fnamemodify(b:NERDTree.root.path.
 " disable bookmark and 'press ? for help ' text
 let NERDTreeMinimalUI=1
 
+" custom config key map
+let g:NERDTreeMapOpenSplit = 's'
+let g:NERDTreeMapOpenVSplit = 'v'
 
 """""""""""""""""""""""""""""" neomake settings """""""""""""""""""""""
 " when writing or reading a buffer, and
@@ -184,6 +187,11 @@ let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn)$',
             \ 'file': '\v\.(exe|so|dll)$',
             \ 'link': 'some_bad_symbolic_links',
+            \ }
+" custom split key map
+let g:ctrlp_prompt_mappings = {
+            \ 'AcceptSelection("h")': ['s'],
+            \ 'AcceptSelection("v")': ['v' ],
             \ }
 
 
