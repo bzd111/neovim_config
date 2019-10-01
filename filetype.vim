@@ -1,7 +1,8 @@
 """"""""""""""""""neoformat settins"""""""""""""""""""""""
 augroup fmt
     autocmd!
-    autocmd BufWritePre * undojoin | Neoformat
+    au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+    " autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
 
@@ -23,14 +24,17 @@ augroup go
     " :GoTest
     autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
-    " :GoRun
-    autocmd FileType go nmap <leader>r  <Plug>(go-run)
+    " :GoRename
+    autocmd FileType go nmap <leader>r  <Plug>(go-rename)
 
     " :GoDoc
     autocmd FileType go nmap <Leader>d <Plug>(go-doc)
 
     " :GoInfo
     autocmd FileType go nmap <Leader>i <Plug>(go-info)
+
+    " :GoDef
+    autocmd FileType go nmap <Leader>g <Plug>(go-def)
 
     " :GoAlternate  commands :A, :AV, :AS and :AT
     autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
