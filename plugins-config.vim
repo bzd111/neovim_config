@@ -109,10 +109,11 @@ let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 
 let g:neoformat_enabled_python = ['black', 'autopep8', 'yapf', 'docformatter', 'isort']
-let g:neoformat_try_formatprg = 1
+let g:neoformat_enabled_javascript= ['prettier']
+let g:neoformat_enabled_markdown= ['prettier']
+let g:neoformat_try_formatprg = 0
 " runs all formatters for current buffer without tab to spaces conversion
-let b:neoformat_run_all_formatters = 1
-let b:neoformat_basic_format_retab = 0
+let b:neoformat_run_all_formatters = 0
 let g:neoformat_python_black = {
             \ 'exe': 'black',
             \ 'stdin': 1,
@@ -252,4 +253,5 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal_code_blocks = 0
+
 
