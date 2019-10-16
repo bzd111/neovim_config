@@ -1,10 +1,8 @@
 """"""""""""""""""neoformat settins"""""""""""""""""""""""
 augroup fmt
     autocmd!
-    "     " au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
-    " autocmd BufWritePre * undojoin | Neoformat
-    sleep 100m
-    autocmd BufWritePre * undojoin| Neoformat
+    au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+    " autocmd BufWritePre * undojoin| Neoformat
 augroup END
 
 

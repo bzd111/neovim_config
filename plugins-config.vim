@@ -100,7 +100,7 @@ let g:NERDToggleCheckAllLines = 1
 
 """"""""""""""""""neoformat settins"""""""""""""""""""""""
 " Enable alignment
-let g:neoformat_basic_format_align = 1
+" let g:neoformat_basic_format_align = 1
 
 " Enable tab to spaces conversion
 let g:neoformat_basic_format_retab = 1
@@ -113,7 +113,7 @@ let g:neoformat_enabled_javascript= ['prettier']
 let g:neoformat_enabled_markdown= ['prettier']
 let g:neoformat_try_formatprg = 0
 " runs all formatters for current buffer without tab to spaces conversion
-let b:neoformat_run_all_formatters = 0
+let b:neoformat_run_all_formatters = 1
 let g:neoformat_python_black = {
             \ 'exe': 'black',
             \ 'stdin': 1,
@@ -147,16 +147,22 @@ let g:NERDTreeMapOpenVSplit = 'v'
 " on changes in normal mode (after 0.5s; no delay when writing).
 call neomake#configure#automake('nrw', 50)
 
+let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
+let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
+
 " change warning signs, see https://goo.gl/eHcjSq
 highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
-let g:neomake_warning_sign={'text': '!', 'texthl': 'NeomakeErrorMsg'}
 
 " only enable flake8 linter for python
 let g:neomake_python_enabled_makers = ['flake8', 'mypy']
 let g:neomake_python_flake8_maker = {
-            \ 'args': [ '--max-line-length=90'
+            \ 'args': [ '--max-line-length=90', '--ignore=F811'
             \ ]
             \ }
+
+let g:neomake_go_enabled_makers = ['golangci_lint']
 
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:lint_types = [
@@ -168,6 +174,7 @@ let g:lint_types = [
 " do not highlight columns, it works bad for sublimemonokai
 " see https://goo.gl/wd68ex for more info
 let g:neomake_highlight_columns = 1
+
 
 
 """"""""""""""""""""""" UltiSnips settins  """"""""""""""""""""""""""
