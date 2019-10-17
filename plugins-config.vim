@@ -147,13 +147,12 @@ let g:NERDTreeMapOpenVSplit = 'v'
 " on changes in normal mode (after 0.5s; no delay when writing).
 call neomake#configure#automake('nrw', 50)
 
+
 let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
 let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
 
-" change warning signs, see https://goo.gl/eHcjSq
-highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
 
 " only enable flake8 linter for python
 let g:neomake_python_enabled_makers = ['flake8', 'mypy']
