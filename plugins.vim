@@ -74,3 +74,15 @@ Plug 'mzlogin/vim-markdown-toc'
 
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim', {'for': 'markdown', 'do': 'cd app & yarn install'}
+
+"mproved Javascript indentation and syntax support in Vim.
+Plug 'pangloss/vim-javascript'
+
+" React JSX syntax highlighting and indenting for vim.
+Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
+
+" Syntax Highlight for Vue.js components
+Plug 'posva/vim-vue'
+
+" Multiple cursors project for vim/neovim (wip)
+" Plug 'mg979/vim-visual-multi'

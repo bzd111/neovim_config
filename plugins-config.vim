@@ -14,6 +14,7 @@ let g:deoplete#sources#jedi#server_timeout = 50
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#completions_command = "<Tab>"
+let g:jedi#show_call_signatures = "2"
 " open the go-to function in split, not another buffer
 " let g:jedi#use_splits_not_buffers = "right"
 
@@ -28,15 +29,6 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " Open :GoDeclsDir with ctrl-g
 nmap <C-g> :GoDeclsDir<cr>
 imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
-
-
-""""""""""""""""""""""""jedi-vim settings"""""""""""""""""""
-" disable autocompletion, cause we use deoplete for completion
-let g:jedi#completions_enabled = 0
-
-" open the go-to function in split, not another buffer
-" let g:jedi#use_splits_not_buffers = "right"
-
 
 
 """""""""""""""""""""""""""vim-airline setting""""""""""""""""""""""
@@ -108,7 +100,7 @@ let g:neoformat_basic_format_retab = 1
 " Enable trimmming of trailing whitespace
 let g:neoformat_basic_format_trim = 1
 
-let g:neoformat_enabled_python = ['black', 'autopep8', 'yapf', 'docformatter', 'isort']
+let g:neoformat_enabled_python = ['isort', 'black']
 let g:neoformat_enabled_javascript= ['prettier']
 let g:neoformat_enabled_markdown= ['prettier']
 let g:neoformat_try_formatprg = 0
@@ -117,7 +109,7 @@ let b:neoformat_run_all_formatters = 1
 let g:neoformat_python_black = {
             \ 'exe': 'black',
             \ 'stdin': 1,
-            \ 'args': ['--line-length', '110', '-S', '-', '2>/dev/null'],
+            \ 'args': ['--line-length', '90', '-S', '-', '2>/dev/null'],
             \ }
 
 
@@ -157,7 +149,7 @@ let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
 " only enable flake8 linter for python
 let g:neomake_python_enabled_makers = ['flake8', 'mypy']
 let g:neomake_python_flake8_maker = {
-            \ 'args': [ '--max-line-length=90', '--ignore=F811'
+            \ 'args': [ '--max-line-length=90', '--ignore=F811,E741'
             \ ]
             \ }
 
@@ -237,6 +229,7 @@ let g:rainbow_conf = {
 
 
 """"""""""""""""""""" vim-go settings """""""""""""""""""""
+" let g:go_list_type = "quickfix"
 let g:go_highlight_structs = 0
 let g:go_highlight_interfaces = 0
 let g:go_fmt_command = "goimports"

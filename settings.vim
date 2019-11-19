@@ -1,4 +1,5 @@
 let mapleader = ','
+set modifiable
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 set guifont=Monaco:h40
@@ -59,7 +60,7 @@ set wildmode=list:longest,full " list all items and start selecting matches
 
 " set a ruler at column 80 and also set its color
 " see https://goo.gl/vEkF5i for more info
-set colorcolumn=80
+set colorcolumn=90
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " minimum lines to keep above and below cursor
@@ -83,11 +84,25 @@ map D :bd<cr>
 nnoremap <C-[> <C-w>h
 nnoremap <C-]> <C-w>l
 
+" switch error/warning
+map <C-[> :lprev<CR>
+map <C-]> :lnext<CR>
+
 " clipboard sharing
 set clipboard=unnamed
 
 " windows keymap
-nnoremap <C-K> <C-W>j
-nnoremap <C-J> <C-W>k
+nnoremap <C-K> <C-W>k
+nnoremap <C-J> <C-W>j
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
+
+" page operating
+noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
+noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
+noremap <expr> <C-f> max([winheight(0) - 2, 1])
+            \ ."\<C-d>".(line('w$') >= line('$') ? "L" : "M")
+noremap <expr> <C-b> max([winheight(0) - 2, 1])
+            \ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
+
+" nnoremap <leader>a :cclose<CR>
