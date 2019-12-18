@@ -1,20 +1,21 @@
 """""""""""""""""""""""""deoplete-jedi settings"""""""""""""""""""""""""""
 " show doc string
-let g:deoplete#sources#jedi#show_docstring = 1
+" let g:deoplete#sources#jedi#show_docstring = 1
 
-let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = '/usr/local/bin/python3'
+" let g:deoplete#enable_at_startup = 1
+" let g:python3_host_prog = '/usr/local/bin/python3'
+" let g:deoplete#sources#go = ['vim-go']
 
 " for large package, set autocomplete wait time longer
-let g:deoplete#sources#jedi#server_timeout = 50
-
+" let g:deoplete#sources#jedi#server_timeout = 50
+" call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 """"""""""""""""""""""""jedi-vim settings"""""""""""""""""""
 " disable autocompletion, cause we use deoplete for completion
-let g:jedi#completions_enabled = 0
-let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#completions_command = "<Tab>"
-let g:jedi#show_call_signatures = "2"
+" let g:jedi#completions_enabled = 0
+" let g:jedi#use_tabs_not_buffers = 1
+" let g:jedi#completions_command = "<Tab>"
+" let g:jedi#show_call_signatures = "2"
 " open the go-to function in split, not another buffer
 " let g:jedi#use_splits_not_buffers = "right"
 
@@ -22,7 +23,7 @@ let g:jedi#show_call_signatures = "2"
 """"""""""""""""""""""""""" deoplete settings""""""""""""""""""""""""""
 " automatically close function preview windows after completion
 " see https://goo.gl/Bn5n39
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 
 """"""""""""""""""""""" deoplete settings""""""""""""""""""""""""""
@@ -95,22 +96,24 @@ let g:NERDToggleCheckAllLines = 1
 " let g:neoformat_basic_format_align = 1
 
 " Enable tab to spaces conversion
-let g:neoformat_basic_format_retab = 1
+" let g:neoformat_basic_format_retab = 1
 
 " Enable trimmming of trailing whitespace
-let g:neoformat_basic_format_trim = 1
+" let g:neoformat_basic_format_trim = 1
 
-let g:neoformat_enabled_python = ['isort', 'black']
-let g:neoformat_enabled_javascript= ['prettier']
-let g:neoformat_enabled_markdown= ['prettier']
-let g:neoformat_try_formatprg = 0
+" let g:neoformat_enabled_python = ['isort', 'black']
+" let g:neoformat_enabled_javascript= ['prettier']
+" let g:neoformat_enabled_markdown= ['prettier']
+" let g:neoformat_enabled_c = ['uncrustify', 'clangformat', 'astyle' ]
+" let g:neoformat_enabled_c = ['astyle']
+" let g:neoformat_try_formatprg = 0
 " runs all formatters for current buffer without tab to spaces conversion
-let b:neoformat_run_all_formatters = 1
-let g:neoformat_python_black = {
-            \ 'exe': 'black',
-            \ 'stdin': 1,
-            \ 'args': ['--line-length', '90', '-S', '-', '2>/dev/null'],
-            \ }
+" let b:neoformat_run_all_formatters = 1
+" let g:neoformat_python_black = {
+            " \ 'exe': 'black',
+            " \ 'stdin': 1,
+            " \ 'args': ['--line-length', '90', '-S', '-', '2>/dev/null'],
+            " \ }
 
 
 """"""""""""""""""""""" nerdtree settings """"""""""""""""""""""""""
@@ -137,34 +140,34 @@ let g:NERDTreeMapOpenVSplit = 'v'
 """""""""""""""""""""""""""""" neomake settings """""""""""""""""""""""
 " when writing or reading a buffer, and
 " on changes in normal mode (after 0.5s; no delay when writing).
-call neomake#configure#automake('nrw', 50)
+" call neomake#configure#automake('nrw', 50)
 
 
-let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
-let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
+" let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
+" let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeErrorSign'}
+" let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
+" let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
 
 
 " only enable flake8 linter for python
-let g:neomake_python_enabled_makers = ['flake8', 'mypy']
-let g:neomake_python_flake8_maker = {
-            \ 'args': [ '--max-line-length=90', '--ignore=F811,E741'
-            \ ]
-            \ }
+" let g:neomake_python_enabled_makers = ['flake8', 'mypy']
+" let g:neomake_python_flake8_maker = {
+            " \ 'args': [ '--max-line-length=90', '--ignore=F811,E741'
+            " \ ]
+            " \ }
 
-let g:neomake_go_enabled_makers = ['golangci_lint']
+" let g:neomake_go_enabled_makers = ['golangci_lint']
 
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:lint_types = [
-            \  'yaml.ansible', 'php', 'ruby', 'vim', 'sh', 'python',
-            \  'javascript', 'jsx', 'javascript.jsx', 'json', 'css',
-            \  'markdown', 'html', 'yaml'
-            \ ]
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:lint_types = [
+"             \  'yaml.ansible', 'php', 'ruby', 'vim', 'sh', 'python',
+"             \  'javascript', 'jsx', 'javascript.jsx', 'json', 'css',
+"             \  'markdown', 'html', 'yaml'
+"             \ ]
 
 " do not highlight columns, it works bad for sublimemonokai
 " see https://goo.gl/wd68ex for more info
-let g:neomake_highlight_columns = 1
+" let g:neomake_highlight_columns = 1
 
 
 
@@ -254,3 +257,60 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
 
+"""""""""""""coc settings  """""""""""""
+let g:python3_host_prog="/usr/local/bin/python3"
+" https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-json', 
+  \ 'coc-prettier', 
+  \ 'coc-python', 
+  \ 'coc-markdownlint'
+  \ ]
+
+  " \ 'coc-pairs',
+  " \ 'coc-tsserver',
+  " \ 'coc-eslint', 
+  " \ 'coc-prettier', 
+  " \ 'coc-yaml', 
+  " \ 'coc-vetur', 
+  " \ 'coc-css', 
+  " \ 'coc-html', 
+  
+"""""""""""""ale settings  """""""""""""
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_linters = {
+"   \ 'javascript': ['eslint'],
+"   \ 'markdown': ['mdl'],
+"   \ 'jsx': ['stylelint', 'eslint'],
+"   \ 'python': ['flake8', 'mypy'],
+" \}
+" let g:ale_fixers = {
+"   \ 'javascript': ['eslint'],
+"   \ 'css': ['stylelint'],
+"   \ 'python': ['black', 'isort'],
+" \}
+" let g:ale_linter_aliases = {
+"   \ 'jsx': 'css',
+" \}
+" let g:ale_sign_error = '•'
+" let g:ale_sign_warning = '•'
+" let g:ale_statusline_format = ['E•%d', 'W•%d', '⬥ ok']
+" " let g:ale_echo_msg_error_str = 'E'
+" " let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_error_str = 'Error'
+" let g:ale_echo_msg_warning_str = 'Warn'
+" " let g:ale_echo_msg_format = '[%linter%][%severity%:: %code%] %s'
+" let g:ale_lint_on_save = 1
+" let g:ale_lint_on_text_changed = 0
+" let g:ale_lint_on_enter = 1
+" let g:ale_warn_about_trailing_whitespace = 1
+" let g:airline#extensions#ale#enabled = 1
+
+
+""""""""""""""""undotree settings""""""""""""""""
+if has("persistent_undo")
+  set undodir=$NVIM_HOME/temp/undodir/
+  set undofile
+endif

@@ -1,14 +1,14 @@
 " settings for deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " python source for deoplete
-Plug 'zchee/deoplete-jedi'
+" Plug 'zchee/deoplete-jedi'
 
 " Python completion, goto definition etc.
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 
 " Use release branch
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " status line
 Plug 'vim-airline/vim-airline'
@@ -20,13 +20,14 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'ervandew/supertab'
 
 " auto pair insert and delete
-Plug 'jiangmiao/auto-pairs'
+" surround.vim: quoting/parenthesizing made simple
+" Plug 'tpope/vim-surround'
 
 " comment plugin
 Plug 'scrooloose/nerdcommenter'
 
 " auto format tool
-Plug 'sbdchd/neoformat'
+" Plug 'sbdchd/neoformat'
 
 " file explorer for vim
 Plug 'scrooloose/nerdtree'
@@ -35,7 +36,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 
 " syntax check and make
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 
 " highlight yanked region
 Plug 'machakann/vim-highlightedyank'
@@ -44,7 +45,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'SirVer/ultisnips'
 
 " snippet template for ultisnips
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 
 " Full path fuzzy file, buffer, mru, tag, ...
 Plug 'kien/ctrlp.vim'
@@ -84,5 +85,25 @@ Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 " Syntax Highlight for Vue.js components
 Plug 'posva/vim-vue'
 
+" Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more
+Plug 'ryanoasis/vim-devicons'
+
+" A plugin of NERDTree showing git status
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Extra syntax and highlight for nerdtree files
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks and partial hunks.
+Plug 'airblade/vim-gitgutter'
 " Multiple cursors project for vim/neovim (wip)
 " Plug 'mg979/vim-visual-multi'
+
+" deoplete-go
+" Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+
+" Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
+Plug 'dense-analysis/ale'
+
+" The undo history visualizer for VIM
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}

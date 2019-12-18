@@ -1,0 +1,36 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "Markdown",
+    "json",
+    "python"
+  ],
+  "python.linting.mypyArgs": [
+    "--ignore-missing-imports",
+    "--follow-imports=silent",
+    "--show-column-numbers"
+  ],
+  "python.linting.flake8Args": ["--max-line-length=90", "--ignore=E402"],
+  "python.formatting.blackArgs": ["--line-length", "90", "-S"],
+  "python.linting.mypyEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "diagnostic.checkCurrentLine": true,
+  "coc.preferences.formatOnType": true,
+  "python.jediPath": "/usr/local/lib/python3.7/site-packages/",
+  "python.linting.lintOnSave": true,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
+    }
+  },
+  "snippets.extends": {
+    "python": ["python"],
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  },
+  "json.format.enable": true,
+  "json.enable": true
+}

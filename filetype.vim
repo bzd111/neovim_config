@@ -1,9 +1,9 @@
 """"""""""""""""""neoformat settins"""""""""""""""""""""""
-augroup fmt
-    autocmd!
-    au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+ "augroup fmt
+  "  autocmd!
+   " au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
     " autocmd BufWritePre * undojoin| Neoformat
-augroup END
+"augroup END
 
 
 """""""""""""""""""""""""""" vim-node settings """"""""""""""""""""""""""""
