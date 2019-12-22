@@ -236,7 +236,7 @@ let g:rainbow_conf = {
 let g:go_highlight_structs = 0
 let g:go_highlight_interfaces = 0
 let g:go_fmt_command = "goimports"
-let g:go_fmt_autosave = 0
+" let g:go_fmt_autosave = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -278,35 +278,37 @@ let g:coc_global_extensions = [
   " \ 'coc-html', 
   
 """""""""""""ale settings  """""""""""""
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let b:ale_linters = {
+  \ 'javascript': ['eslint'],
+  \ 'markdown': ['mkl'],
+  \ 'jsx': ['stylelint', 'eslint'],
+  \ 'python': ['flake8', 'mypy'],
+\}
+let b:ale_fixers = {
+  \ 'javascript': ['eslint'],
+  \ 'css': ['stylelint'],
+  \ 'python': ['black', 'isort'],
+  \ 'markdown': ['prettier'],
+\}
+let g:ale_linter_aliases = {
+  \ 'jsx': 'css',
+\}
+let g:ale_sign_error = '•'
+let g:ale_sign_warning = '•'
+let g:ale_statusline_format = ['E•%d', 'W•%d', '⬥ ok']
 " let g:ale_echo_msg_error_str = 'E'
 " let g:ale_echo_msg_warning_str = 'W'
-" let g:ale_linters = {
-"   \ 'javascript': ['eslint'],
-"   \ 'markdown': ['mdl'],
-"   \ 'jsx': ['stylelint', 'eslint'],
-"   \ 'python': ['flake8', 'mypy'],
-" \}
-" let g:ale_fixers = {
-"   \ 'javascript': ['eslint'],
-"   \ 'css': ['stylelint'],
-"   \ 'python': ['black', 'isort'],
-" \}
-" let g:ale_linter_aliases = {
-"   \ 'jsx': 'css',
-" \}
-" let g:ale_sign_error = '•'
-" let g:ale_sign_warning = '•'
-" let g:ale_statusline_format = ['E•%d', 'W•%d', '⬥ ok']
-" " let g:ale_echo_msg_error_str = 'E'
-" " let g:ale_echo_msg_warning_str = 'W'
-" let g:ale_echo_msg_error_str = 'Error'
-" let g:ale_echo_msg_warning_str = 'Warn'
-" " let g:ale_echo_msg_format = '[%linter%][%severity%:: %code%] %s'
-" let g:ale_lint_on_save = 1
-" let g:ale_lint_on_text_changed = 0
-" let g:ale_lint_on_enter = 1
-" let g:ale_warn_about_trailing_whitespace = 1
-" let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_warning_str = 'Warn'
+let g:ale_echo_msg_format = '[%linter%][%severity%:: %code%] %s'
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 1
+let g:ale_warn_about_trailing_whitespace = 1
+let g:airline#extensions#ale#enabled = 1
 
 
 """"""""""""""""undotree settings""""""""""""""""

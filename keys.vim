@@ -48,6 +48,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Use K to show documentation in preview window
 function! s:show_documentation()
@@ -63,8 +64,8 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 nmap <F2> <Plug>(coc-rename)
 
 " Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [e <Plug>(coc-diagnostic-prev)
-nmap <silent> ]e <Plug>(coc-diagnostic-next)
+" nmap <silent> [e <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]e <Plug>(coc-diagnostic-next)
 "
 noremap <silent><leader>uu :CocList -N<CR>
 noremap <silent><leader>uf :CocList files<CR>
@@ -73,8 +74,8 @@ noremap <silent><leader>uc :CocList commands<CR>
 
 
 """"""""""""""""""""""" ale settings """"""""""""""""""""""""""
-" nmap <silent> [e <Plug>(ale_previous_wrap)
-" nmap <silent> ]e <Plug>(ale_next_wrap)
+nmap <silent> [e <Plug>(ale_previous_wrap)
+nmap <silent> ]e <Plug>(ale_next_wrap)
 
 
 """"""""""""""""""""""" undotree settings """"""""""""""""""""""""""
