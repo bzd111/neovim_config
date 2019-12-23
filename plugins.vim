@@ -21,7 +21,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " auto pair insert and delete
 " surround.vim: quoting/parenthesizing made simple
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " comment plugin
 Plug 'scrooloose/nerdcommenter'
@@ -107,3 +107,6 @@ Plug 'dense-analysis/ale'
 
 " The undo history visualizer for VIM
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
+
+" Insert or delete brackets, parens, quotes in pair.
+Plug 'jiangmiao/auto-pairs'
