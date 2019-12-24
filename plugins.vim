@@ -110,3 +110,7 @@ Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 
 " Insert or delete brackets, parens, quotes in pair.
 Plug 'jiangmiao/auto-pairs'
+
+
+" Plug 'justinj/vim-react-snippets'
+

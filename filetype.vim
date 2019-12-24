@@ -40,3 +40,31 @@ augroup go
     autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
     autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 augroup END
+
+" augroup python 
+  " autocmd!
+  " Setup formatexpr specified filetype(s).
+  " autocmd FileType py call CocAction('Sort imports')
+  " autocmd FileType py call CocAction('runCommand', 'editor.action.organizeImport')
+
+  " autocmd FileType python call CocAction('sortimports')
+  " autocmd FileType python call CocAction('format')
+" augroup end
+
+" autocmd BufWritePre *.py :call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd BufNewFile,BufRead *.vue set ft=vue
+autocmd FileType vue set ai
+autocmd FileType vue set sw=2
+autocmd FileType vue set ts=2
+autocmd FileType vue set sts=2
+
+autocmd BufNewFile,BufRead *.jsx set ft=jsx
+autocmd FileType jsx set ai
+autocmd FileType jsx set sw=2
+autocmd FileType jsx set ts=2
+autocmd FileType jsx set sts=2
+
+autocmd BufRead *.js set isk-=.
+autocmd BufRead *.jsx set isk-=.
+
+autocmd FileType html setlocal ts=2 sts=2 sw=2

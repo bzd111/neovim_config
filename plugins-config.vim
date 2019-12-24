@@ -265,7 +265,9 @@ let g:coc_global_extensions = [
   \ 'coc-json', 
   \ 'coc-prettier', 
   \ 'coc-python', 
-  \ 'coc-markdownlint'
+  \ 'coc-markdownlint',
+  \ 'coc-tsserver',
+  \ 'coc-vetur'
   \ ]
 
   " \ 'coc-pairs',
@@ -285,15 +287,18 @@ let b:ale_linters = {
   \ 'markdown': ['mkl'],
   \ 'jsx': ['stylelint', 'eslint'],
   \ 'python': ['flake8', 'mypy'],
+  \ 'vue': ['eslint', 'vls']
 \}
 let b:ale_fixers = {
-  \ 'javascript': ['eslint'],
+  \ 'javascript': ['prettier'],
   \ 'css': ['stylelint'],
   \ 'python': ['black', 'isort'],
   \ 'markdown': ['prettier'],
+  \ 'vue': ['prettier']
 \}
 let g:ale_linter_aliases = {
-  \ 'jsx': 'css',
+  \ 'jsx': 'javascript',
+  \ 'vue': ['vue', 'javascript']
 \}
 let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
@@ -316,3 +321,11 @@ if has("persistent_undo")
   set undodir=$NVIM_HOME/temp/undodir/
   set undofile
 endif
+
+
+""""""""""""""""vim-jsx settings""""""""""""""""
+let g:jsx_ext_required = 0
+
+
+""""""""""""""""vim-vue settings""""""""""""""""
+let g:vue_pre_processors = ['pug', 'scss', 'less']
