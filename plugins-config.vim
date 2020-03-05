@@ -137,6 +137,10 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeMapOpenSplit = 's'
 let g:NERDTreeMapOpenVSplit = 'v'
 
+" auto close when open file
+let g:NERDTreeQuitOnOpen = 1
+
+
 """""""""""""""""""""""""""""" neomake settings """""""""""""""""""""""
 " when writing or reading a buffer, and
 " on changes in normal mode (after 0.5s; no delay when writing).
@@ -279,17 +283,18 @@ let g:coc_global_extensions = [
   " \ 'coc-css', 
   " \ 'coc-html', 
   
+
 """""""""""""ale settings  """""""""""""
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
-let b:ale_linters = {
+let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'markdown': ['mkl'],
   \ 'jsx': ['stylelint', 'eslint'],
   \ 'python': ['flake8', 'mypy'],
   \ 'vue': ['eslint', 'vls']
 \}
-let b:ale_fixers = {
+let g:ale_fixers = {
   \ 'javascript': ['prettier'],
   \ 'css': ['stylelint'],
   \ 'python': ['black', 'isort'],
@@ -300,6 +305,7 @@ let g:ale_linter_aliases = {
   \ 'jsx': 'javascript',
   \ 'vue': ['vue', 'javascript']
 \}
+let g:ale_python_black_options='--skip-string-normalization --fast --line-length 80'
 let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
 let g:ale_statusline_format = ['E•%d', 'W•%d', '⬥ ok']
