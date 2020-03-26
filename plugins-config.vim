@@ -71,8 +71,8 @@ let g:airline_right_sep = '◀'
 
 """""""""""""""""""""""""""""supertab settings""""""""""""""""""""""""""
 " auto-close method preview window
-let g:SuperTabClosePreviewOnPopupClose = 1
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabClosePreviewOnPopupClose = 1
+" let g:SuperTabDefaultCompletionType = "<c-n>"
 
 
 """"""""""""""""""""""""""""nerdcommenter settings"""""""""""""""""""
@@ -248,6 +248,8 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_get_update = 0
+" let g:go_def_mode='gopls'
+" let g:go_info_mode='gopls'
 
 
 """"""""""""""""""""" vim-markdown """""""""""""""""""""
@@ -271,7 +273,8 @@ let g:coc_global_extensions = [
   \ 'coc-python', 
   \ 'coc-markdownlint',
   \ 'coc-tsserver',
-  \ 'coc-vetur'
+  \ 'coc-vetur',
+  \ 'coc-yaml'
   \ ]
 
   " \ 'coc-pairs',
@@ -292,7 +295,8 @@ let g:ale_linters = {
   \ 'markdown': ['mkl'],
   \ 'jsx': ['stylelint', 'eslint'],
   \ 'python': ['flake8', 'mypy'],
-  \ 'vue': ['eslint', 'vls']
+  \ 'vue': ['eslint', 'vls'],
+  \ 'go': ['gopls'],
 \}
 let g:ale_fixers = {
   \ 'javascript': ['prettier'],
@@ -305,7 +309,9 @@ let g:ale_linter_aliases = {
   \ 'jsx': 'javascript',
   \ 'vue': ['vue', 'javascript']
 \}
-let g:ale_python_black_options='--skip-string-normalization --fast --line-length 80'
+let g:ale_python_black_options='--skip-string-normalization --fast --line-length 88'
+" let g:ale_python_flake8_options = '--max-line-length=88 --ignore=E265,E266,501'
+let g:ale_python_flake8_options = '--max-line-length=88 '
 let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
 let g:ale_statusline_format = ['E•%d', 'W•%d', '⬥ ok']

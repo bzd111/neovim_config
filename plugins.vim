@@ -114,3 +114,9 @@ Plug 'jiangmiao/auto-pairs'
 
 " Plug 'justinj/vim-react-snippets'
 
+" Vim plugin that displays tags in a window, ordered by scope
+Plug 'majutsushi/tagbar'
+
+" A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
+Plug 'jparise/vim-graphql'
+
