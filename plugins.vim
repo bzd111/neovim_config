@@ -120,3 +120,7 @@ Plug 'majutsushi/tagbar'
 " A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
 Plug 'jparise/vim-graphql'
 
+" fzf ❤️ vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
