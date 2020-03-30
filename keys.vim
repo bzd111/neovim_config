@@ -23,6 +23,8 @@ noremap <silent> <leader>nm :NERDTreeMirrorToggle<CR>
 
 
 """"""""""""""""""""""" vim-go settings """"""""""""""""""""""""""
+" autocmd FileType go nnoremap <buffer> <silent> <leader>g :GoDef<cr>
+" autocmd FileType go nnoremap <buffer> <silent> <leader>r :GoRename<cr>
 nnoremap <buffer> <silent> <leader>g :GoDef<cr>
 nnoremap <buffer> <silent> <leader>r :GoRename<cr>
 
@@ -33,15 +35,18 @@ vmap <leader>f <Plug>CtrlSFVwordPath
 
 
 """"""""""""""""""""""" Coc settings """"""""""""""""""""""""""
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -51,6 +56,8 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
 " Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -58,10 +65,7 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" Remap for rename current word
-nmap <F2> <Plug>(coc-rename)
 
 " Use `[g` and `]g` to navigate diagnostics
 " nmap <silent> [e <Plug>(coc-diagnostic-prev)
@@ -74,11 +78,14 @@ noremap <silent><leader>uc :CocList commands<CR>
 
 
 """"""""""""""""""""""" ale settings """"""""""""""""""""""""""
-nmap <silent> [e <Plug>(ale_previous_wrap)
-nmap <silent> ]e <Plug>(ale_next_wrap)
+nmap <silent> [e <Plug>(ale_previous_error)
+nmap <silent> ]e <Plug>(ale_next_error)
 
 
 """"""""""""""""""""""" undotree settings """"""""""""""""""""""""""
 noremap <silent><F3> :UndotreeToggle<CR>
 
 
+""""""""""""""""""""""" tagbar""""""""""""""""""""""""""
+noremap <leader>tb :TagbarOpen fjc<CR>
+noremap <leader>tB :TagbarToggle<CR>
