@@ -13,3 +13,6 @@ source $NVIM_HOME/plugins-config.vim
 
 source $NVIM_HOME/keys.vim
 source $NVIM_HOME/functions.vim
+" source $NVIM_HOME/coc.vim
+
+

@@ -1,6 +1,6 @@
 let mapleader = ','
 set modifiable
-set encoding=utf-8
+set encoding=UTF-8
 set langmenu=zh_CN.UTF-8
 set guifont=Monaco:h40
 
@@ -75,34 +75,27 @@ set noshowmode
 " ignore case
 set ignorecase
 
-" switch buffer
-map H :bn<cr>
-map L :bp<cr>
-map D :bd<cr>
-
-" switch windows
-nnoremap <C-[> <C-w>h
-nnoremap <C-]> <C-w>l
-
-" switch error/warning
-map <C-[> :lprev<CR>
-map <C-]> :lnext<CR>
-
-" clipboard sharing
-set clipboard=unnamed
-
-" windows keymap
-nnoremap <C-K> <C-W>k
-nnoremap <C-J> <C-W>j
-nnoremap <C-L> <C-W>l
-nnoremap <C-H> <C-W>h
-
-" page operating
-noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
-noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
-noremap <expr> <C-f> max([winheight(0) - 2, 1])
-            \ ."\<C-d>".(line('w$') >= line('$') ? "L" : "M")
-noremap <expr> <C-b> max([winheight(0) - 2, 1])
-            \ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
-
 " nnoremap <leader>a :cclose<CR>
+"
+" 默认的状态栏显示的内容。vim-airline 会覆盖这个配置，当禁用 airline 时此行生效。
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+
+" if hidden is not set, TextEdit might fail.
+set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+

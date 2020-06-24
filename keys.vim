@@ -53,7 +53,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader> rn <Plug>(coc-rename)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -89,3 +89,49 @@ noremap <silent><F3> :UndotreeToggle<CR>
 """"""""""""""""""""""" tagbar""""""""""""""""""""""""""
 noremap <leader>tb :TagbarOpen fjc<CR>
 noremap <leader>tB :TagbarToggle<CR>
+
+" switch buffer
+map L :bn<cr>
+map H :bp<cr>
+map D :bd<cr>
+
+" switch windows
+nnoremap <C-[> <C-w>h
+nnoremap <C-]> <C-w>l
+
+" switch error/warning
+map <C-[> :lprev<CR>
+map <C-]> :lnext<CR>
+
+" clipboard sharing
+set clipboard=unnamed
+
+" windows keymap
+" nnoremap <C-K> <C-W>k
+" nnoremap <C-J> <C-W>j
+" nnoremap <C-L> <C-W>l
+" nnoremap <C-H> <C-W>h
+nnoremap <C-k> <C-W>k
+nnoremap <C-j> <C-W>j
+nnoremap <C-l> <C-W>l
+nnoremap <C-h> <C-W>h
+
+" page operating
+noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
+noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
+noremap <expr> <C-f> max([winheight(0) - 2, 1])
+            \ ."\<C-d>".(line('w$') >= line('$') ? "L" : "M")
+noremap <expr> <C-b> max([winheight(0) - 2, 1])
+            \ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
+
+
+""""""""""""""""""""""" from book """"""""""""""""""""""""""
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
+nnoremap <silent> [t :tabnext<CR>
+nnoremap <silent> ]t :tabprevious<CR>
+
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>

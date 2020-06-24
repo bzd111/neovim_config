@@ -124,3 +124,17 @@ Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+
+" Manage any Kubernetes resource from Vim https://www.vim.org/scripts/script.ph…
+" Plug 'rottencandy/vimkubectl'
+
+" surround.vim: quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'
+
+" Auto close (X)HTML tags
+Plug 'alvan/vim-closetag'
+
+
+" Vim syntax for TOML
+Plug 'cespare/vim-toml'
+

@@ -248,6 +248,7 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_get_update = 0
+let g:go_rename_command = 'gopls'
 " let g:go_def_mode='gopls'
 " let g:go_info_mode='gopls'
 
@@ -296,14 +297,20 @@ let g:ale_linters = {
   \ 'jsx': ['stylelint', 'eslint'],
   \ 'python': ['flake8', 'mypy'],
   \ 'vue': ['eslint', 'vls'],
-  \ 'go': ['gopls'],
+  \ 'go': ['golint','golangci-lint'],
+  \ 'ts': ['eslint'],
+  \ 'typescript': ['eslint'],
+  \ 'yaml': ['yamllint'],
 \}
 let g:ale_fixers = {
   \ 'javascript': ['prettier'],
   \ 'css': ['stylelint'],
+  \ 'yaml': ['prettier'],
   \ 'python': ['black', 'isort'],
   \ 'markdown': ['prettier'],
-  \ 'vue': ['prettier']
+  \ 'vue': ['prettier'],
+  \ 'typescript': ['prettier'],
+  \ 'html': ['prettier'],
 \}
 let g:ale_linter_aliases = {
   \ 'jsx': 'javascript',

@@ -68,3 +68,9 @@ autocmd BufRead *.js set isk-=.
 autocmd BufRead *.jsx set isk-=.
 
 autocmd FileType html setlocal ts=2 sts=2 sw=2
+
+" add yaml stuffs
+" au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
