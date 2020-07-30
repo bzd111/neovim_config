@@ -24,10 +24,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
 
 " comment plugin
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 
 " auto format tool
-" Plug 'sbdchd/neoformat'
+Plug 'sbdchd/neoformat'
 
 " file explorer for vim
 Plug 'scrooloose/nerdtree'
@@ -134,7 +135,15 @@ Plug 'tpope/vim-surround'
 " Auto close (X)HTML tags
 Plug 'alvan/vim-closetag'
 
-
 " Vim syntax for TOML
 Plug 'cespare/vim-toml'
+
+" like closetag. endings for html, xml, etc. - enhance vim-surround
+Plug 'tpope/vim-ragtag' 
+
+" emmet for vim:
+Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'xhtml']}
+
+" Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node.
+Plug 'moll/vim-node', {'for': ['javascript']}
 

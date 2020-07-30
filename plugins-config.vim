@@ -90,6 +90,11 @@ let g:NERDDefaultAlign = 'left'
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = {
+  \ 'javascript.jsx': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+  \}
+
 
 """"""""""""""""""neoformat settins"""""""""""""""""""""""
 " Enable alignment
@@ -105,6 +110,7 @@ let g:NERDToggleCheckAllLines = 1
 " let g:neoformat_enabled_javascript= ['prettier']
 " let g:neoformat_enabled_markdown= ['prettier']
 " let g:neoformat_enabled_c = ['uncrustify', 'clangformat', 'astyle' ]
+let g:neoformat_enabled_proto = ['clangformat']
 " let g:neoformat_enabled_c = ['astyle']
 " let g:neoformat_try_formatprg = 0
 " runs all formatters for current buffer without tab to spaces conversion
@@ -286,7 +292,12 @@ let g:coc_global_extensions = [
   " \ 'coc-vetur', 
   " \ 'coc-css', 
   " \ 'coc-html', 
-  
+  "
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
 
 """""""""""""ale settings  """""""""""""
 let g:ale_echo_msg_error_str = 'E'
@@ -348,3 +359,9 @@ let g:jsx_ext_required = 0
 
 """"""""""""""""vim-vue settings""""""""""""""""
 let g:vue_pre_processors = ['pug', 'scss', 'less']
+
+
+""""""""""""""""vim-closetag settings""""""""""""""""
+let g:closetag_filenames = "*.html,*.xml,*.xhtml,*.htm,*.jsx,*.js"
+
+
