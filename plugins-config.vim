@@ -312,6 +312,7 @@ let g:ale_linters = {
   \ 'ts': ['eslint'],
   \ 'typescript': ['eslint'],
   \ 'yaml': ['yamllint'],
+  \ 'rust': ['rustc','rls'],
 \}
 let g:ale_fixers = {
   \ 'javascript': ['prettier'],
@@ -322,10 +323,11 @@ let g:ale_fixers = {
   \ 'vue': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'html': ['prettier'],
+  \ 'rust': ['rustfmt'],
 \}
 let g:ale_linter_aliases = {
   \ 'jsx': 'javascript',
-  \ 'vue': ['vue', 'javascript']
+  \ 'vue': ['vue', 'javascript'],
 \}
 let g:ale_python_black_options='--skip-string-normalization --fast --line-length 88'
 " let g:ale_python_flake8_options = '--max-line-length=88 --ignore=E265,E266,501'

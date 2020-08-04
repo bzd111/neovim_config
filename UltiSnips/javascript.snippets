@@ -39,21 +39,21 @@ snippet eslint-disable-next-line
 // eslint-disable-next-line ${1:rule}
 endsnippet
 
-snippet rcc "Creates a React component class with ES6 module system"
-import React, { Component } from 'react';
+# snippet rcc "Creates a React component class with ES6 module system"
+# import React, { Component } from 'react';
 
-class ${1:TM_FILENAME_BASE} extends Component {
-	render() {
-		return (
-			<div>
-				$2	
-			</div>
-		);
-	}
-}
+# class ${1:TM_FILENAME_BASE} extends Component {
+#     render() {
+#         return (
+#             <div>
+#                 $2	
+#             </div>
+#         );
+#     }
+# }
 
-export default $1;
-endsnippet
+# export default $1;
+# endsnippet
 
 snippet clg "console.log"
 console.log($1);
@@ -93,32 +93,32 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps)($1);
 endsnippet
 
-snippet rcc "React Class Component" b
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styles from './${2:$1}.css';
+# snippet rcc "React Class Component" b
+# import React, { Component } from 'react';
+# import PropTypes from 'prop-types';
+# import styles from './${2:$1}.css';
 
-class ${1:`!v expand('%:t:r')`} extends Component {
-	static propTypes = {
-		${2:children: PropTypes.node,
-		className: PropTypes.string,}
-	};
+# class ${1:`!v expand('%:t:r')`} extends Component {
+#     static propTypes = {
+#         ${2:children: PropTypes.node,
+#         className: PropTypes.string,}
+#     };
 
-	constructor(props) {
-		super(props);
-	}
+#     constructor(props) {
+#         super(props);
+#     }
 
-	render() {
-		return (
-			<${3:div} className={styles.base}>
-				$0
-			</$3>
-		);
-	}
-}
+#     render() {
+#         return (
+#             <${3:div} className={styles.base}>
+#                 $0
+#             </$3>
+#         );
+#     }
+# }
 
-export default $1;
-endsnippet
+# export default $1;
+# endsnippet
 
 snippet rfc "React Functional Component" b
 import React from 'react';
@@ -381,5 +381,33 @@ endsnippet
 snippet cf "const Function"
 const $1 = ($2) => {
 	$3
+}
+endsnippet
+
+snippet rcc "React Class Component "
+import React, { useState, useEffect } from 'react';
+
+const $1 = ($2) => {
+	return (
+		<div>
+			$3
+		</div>
+	);
+}
+
+export default $1;
+endsnippet
+
+snippet if "If"
+if ($1) {
+   $2
+}
+endsnippet
+
+snippet ife "If Else"
+if ($1) {
+   $2
+}else{
+   $3
 }
 endsnippet
