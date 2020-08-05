@@ -47,6 +47,24 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+" Use <C-l> for trigger snippet expand.
+" imap <C-j> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+" vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" imap <C-j> <Plug>(coc-snippets-expand)
+
+
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -80,6 +98,8 @@ noremap <silent><leader>uc :CocList commands<CR>
 """"""""""""""""""""""" ale settings """"""""""""""""""""""""""
 nmap <silent> [e <Plug>(ale_previous_error)
 nmap <silent> ]e <Plug>(ale_next_error)
+nmap <silent> [w :ALEPrevious<cr>
+nmap <silent> ]w :ALENext<cr>
 
 
 """"""""""""""""""""""" undotree settings """"""""""""""""""""""""""
@@ -110,7 +130,7 @@ set clipboard=unnamed
 " nnoremap <C-K> <C-W>k
 " nnoremap <C-J> <C-W>j
 " nnoremap <C-L> <C-W>l
-" nnoremap <C-H> <C-W>h
+" nnoremap <n-H> <C-W>h
 nnoremap <C-k> <C-W>k
 nnoremap <C-j> <C-W>j
 nnoremap <C-l> <C-W>l

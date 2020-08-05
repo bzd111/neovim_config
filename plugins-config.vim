@@ -182,11 +182,11 @@ let g:NERDTreeQuitOnOpen = 1
 
 
 """"""""""""""""""""""" UltiSnips settins  """"""""""""""""""""""""""
-let g:UltiSnipsSnippetsDir = $NVIM_HOME.'/UltiSnips'
+" let g:UltiSnipsSnippetsDir = $NVIM_HOME.'/UltiSnips'
 " let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
 """"""""""""""""""""""" ctrlp settins  """"""""""""""""""""""""""
@@ -294,10 +294,10 @@ let g:coc_global_extensions = [
   " \ 'coc-html', 
   "
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+" let g:coc_snippet_next = '<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
+" let g:coc_snippet_prev = '<c-k>'
 
 """""""""""""ale settings  """""""""""""
 let g:ale_echo_msg_error_str = 'E'

@@ -43,7 +43,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'machakann/vim-highlightedyank'
 
 " snippet engine
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 
 " snippet template for ultisnips
 " Plug 'honza/vim-snippets'
@@ -146,4 +146,9 @@ Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'xhtml']}
 
 " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node.
 Plug 'moll/vim-node', {'for': ['javascript']}
+
+" Vim version of the snippets from jgebhardt/sublime-react
+" Plug 'justinj/vim-react-snippets'
+" Useful snippets for developing in React (Javascript and Typescript)
+Plug 'mlaursen/vim-react-snippets'
 
