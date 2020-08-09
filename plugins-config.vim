@@ -128,7 +128,7 @@ let NERDTreeWinPos='left'
 let NERDTreeWinSize=30
 
 " ignore certain files and folders
-let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__', 'node_modules'] "ignore files in NERDTree
 
 " delete a file buffer when you have deleted it in nerdtree
 let NERDTreeAutoDeleteBuffer = 1
@@ -145,6 +145,8 @@ let g:NERDTreeMapOpenVSplit = 'v'
 
 " auto close when open file
 let g:NERDTreeQuitOnOpen = 1
+
+let NERDTreeShowHidden=1
 
 
 """""""""""""""""""""""""""""" neomake settings """""""""""""""""""""""
