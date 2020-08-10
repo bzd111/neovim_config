@@ -369,3 +369,6 @@ let g:vue_pre_processors = ['pug', 'scss', 'less']
 let g:closetag_filenames = "*.html,*.xml,*.xhtml,*.htm,*.jsx,*.js"
 
 
+""""""""""""""""vim-jsx settings""""""""""""""""
+let g:jsx_ext_required = 1
+

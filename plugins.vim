@@ -152,3 +152,12 @@ Plug 'moll/vim-node', {'for': ['javascript']}
 " Useful snippets for developing in React (Javascript and Typescript)
 Plug 'mlaursen/vim-react-snippets'
 
+" Typescript syntax files for Vim
+Plug 'leafgarland/typescript-vim'
+
+" Typescript tooling for Neovim
+" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+" Plug 'mhartington/nvim-typescript'
+
+" Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
+Plug 'HerringtonDarkholme/yats.vim'

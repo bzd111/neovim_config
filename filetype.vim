@@ -58,11 +58,12 @@ autocmd FileType vue set sw=2
 autocmd FileType vue set ts=2
 autocmd FileType vue set sts=2
 
-autocmd BufNewFile,BufRead *.jsx set ft=jsx
-autocmd FileType jsx set ai
-autocmd FileType jsx set sw=2
-autocmd FileType jsx set ts=2
-autocmd FileType jsx set sts=2
+" autocmd BufNewFile,BufRead *.jsx set ft=jsx
+autocmd BufNewFile,BufRead *.js set ft=javascript
+autocmd FileType javascript.jsx set ai
+autocmd FileType javascript.jsx set sw=2
+autocmd FileType javascript.jsx set ts=2
+autocmd FileType javascript.jsx set sts=2
 
 autocmd BufRead *.js set isk-=.
 autocmd BufRead *.jsx set isk-=.
