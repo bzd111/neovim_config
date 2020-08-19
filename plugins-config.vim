@@ -28,8 +28,8 @@
 
 """"""""""""""""""""""" deoplete settings""""""""""""""""""""""""""
 " Open :GoDeclsDir with ctrl-g
-nmap <C-g> :GoDeclsDir<cr>
-imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
+" nmap <C-g> :GoDeclsDir<cr>
+" imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
 
 """""""""""""""""""""""""""vim-airline setting""""""""""""""""""""""
@@ -185,7 +185,7 @@ let NERDTreeShowHidden=1
 
 """"""""""""""""""""""" UltiSnips settins  """"""""""""""""""""""""""
 " let g:UltiSnipsSnippetsDir = $NVIM_HOME.'/UltiSnips'
-" let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsExpandTnigger = "<tab>"
 " let g:UltiSnipsExpandTrigger="<c-j>"
 " let g:UltiSnipsJumpForwardTrigger="<c-j>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
@@ -257,6 +257,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_get_update = 0
 let g:go_rename_command = 'gopls'
+
 " let g:go_def_mode='gopls'
 " let g:go_info_mode='gopls'
 
@@ -285,6 +286,8 @@ let g:coc_global_extensions = [
   \ 'coc-vetur',
   \ 'coc-yaml'
   \ ]
+let b:coc_pairs_disabled=['<']
+
 
   " \ 'coc-pairs',
   " \ 'coc-tsserver',

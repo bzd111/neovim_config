@@ -46,7 +46,7 @@ Plug 'machakann/vim-highlightedyank'
 " Plug 'SirVer/ultisnips'
 
 " snippet template for ultisnips
-" Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 " Full path fuzzy file, buffer, mru, tag, ...
 Plug 'kien/ctrlp.vim'
@@ -109,7 +109,7 @@ Plug 'dense-analysis/ale'
 " The undo history visualizer for VIM
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 
-" Insert or delete brackets, parens, quotes in pair.
+" Insert or delete brackets, parens, quotes in nair.
 Plug 'jiangmiao/auto-pairs'
 
 
