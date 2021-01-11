@@ -5,19 +5,41 @@
   "languageserver": {
     "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "filetypes": ["go"]
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
     }
   },
   "snippets.extends": {
     "python": ["python"],
     "javascriptreact": ["javascript"],
-    "typescript": ["javascript"]
+    "typescript": ["javascript"],
+    "html": ["html"],
+    "yaml": ["yaml"]
   },
-  "coc.preferences.formatOnSaveFiletypes": [
-    "markdown",
-    "json",
-    "golang"
-  ],
-  "markdownlint.onSave":true,
+  "snippets.ultisnips.directories": ["gosnippets/UltiSnips", "UltiSnips"],
+  "coc.preferences.formatOnSaveFiletypes": ["markdown", "json", "golang"],
+  "markdownlint.onSave": true,
+  "yaml.schemas": {
+    "Kubernetes": "/*.yaml"
+  },
+  "yaml.format.enable": true
 }

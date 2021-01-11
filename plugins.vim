@@ -161,3 +161,20 @@ Plug 'leafgarland/typescript-vim'
 
 " Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
 Plug 'HerringtonDarkholme/yats.vim'
+
+" On-demand lazy load
+Plug 'liuchengxu/vim-which-key'
+
+" basic vim/terraform integration
+Plug 'hashivim/vim-terraform'
+
+" vim syntax for helm templates (yaml + gotmpl + sprig + custom)
+Plug 'towolf/vim-helm'
+
+" Vim configuration for Rust.
+Plug 'rust-lang/rust.vim'
+
+" A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
+Plug 'jparise/vim-graphql'
+
+

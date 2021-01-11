@@ -128,7 +128,7 @@ let NERDTreeWinPos='left'
 let NERDTreeWinSize=30
 
 " ignore certain files and folders
-let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__', 'node_modules'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__', 'node_modules','.git$', '.vscode'] "ignore files in NERDTree
 
 " delete a file buffer when you have deleted it in nerdtree
 let NERDTreeAutoDeleteBuffer = 1
@@ -307,6 +307,12 @@ let b:coc_pairs_disabled=['<']
 """""""""""""ale settings  """""""""""""
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
+let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
+" let g:ale_linter_aliases = {
+"   \ 'jsx': 'javascript',
+"   \ 'vue': ['vue', 'javascript'],
+"   \ 'typescriptreact': 'typescript',
+" \}
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'markdown': ['mkl'],
@@ -317,7 +323,9 @@ let g:ale_linters = {
   \ 'ts': ['eslint'],
   \ 'typescript': ['eslint'],
   \ 'yaml': ['yamllint'],
-  \ 'rust': ['rustc','rls'],
+  \ 'rust': ['rls', 'rustc'],
+  \ 'c': ['ccls'],
+  \ 'graphql': ['gqlint'],
 \}
 let g:ale_fixers = {
   \ 'javascript': ['prettier'],
@@ -327,17 +335,18 @@ let g:ale_fixers = {
   \ 'markdown': ['prettier'],
   \ 'vue': ['prettier'],
   \ 'typescript': ['prettier'],
-  \ 'html': ['prettier'],
+  \ 'html': ['tidy', 'prettier'],
   \ 'rust': ['rustfmt'],
+  \ 'typescriptreact': ['prettier'],
+  \ 'c': ['clang-format'],
+  \ 'graphql': ['prettier'],
 \}
-let g:ale_linter_aliases = {
-  \ 'jsx': 'javascript',
-  \ 'vue': ['vue', 'javascript'],
-\}
+let ale_c_clangformat_options='-style="{IndentWidth: 4}"'
+let g:ale_rust_rustc_options=''
 let g:ale_python_black_options='--skip-string-normalization --fast --line-length 88'
 " let g:ale_python_flake8_options = '--max-line-length=88 --ignore=E265,E266,501'
-let g:ale_python_flake8_options = '--max-line-length=88 '
-let g:ale_sign_error = '•'
+let g:ale_python_flake8_options = '--max-line-length=88 --ignore=E1101'
+let g:ale_sign_error = '*'
 let g:ale_sign_warning = '•'
 let g:ale_statusline_format = ['E•%d', 'W•%d', '⬥ ok']
 " let g:ale_echo_msg_error_str = 'E'
@@ -369,9 +378,77 @@ let g:vue_pre_processors = ['pug', 'scss', 'less']
 
 
 """"""""""""""""vim-closetag settings""""""""""""""""
-let g:closetag_filenames = "*.html,*.xml,*.xhtml,*.htm,*.jsx,*.js"
+let g:closetag_filenames = "*.html,*.xml,*.xhtml,*.htm,*.jsx,*.js, *.tsx"
 
 
 """"""""""""""""vim-jsx settings""""""""""""""""
 let g:jsx_ext_required = 1
 
+
+nnoremap <silent> <leader> :<c-u>WhichKey ','<CR>
+" Define prefix dictionary
+let g:which_key_map =  {}
+
+" Second level dictionaries:
+" 'name' is a special field. It will define the name of the group, e.g., leader-f is the "+file" group.
+" Unnamed groups will show a default empty string.
+
+" =======================================================
+" Create menus based on existing mappings
+" =======================================================
+" You can pass a descriptive text to an existing mapping.
+
+let g:which_key_map.f = { 'name' : '+file' }
+
+nnoremap <silent> <leader>fs :update<CR>
+let g:which_key_map.f.s = 'save-file'
+
+nnoremap <silent> <leader>fd :e $MYVIMRC<CR>
+let g:which_key_map.f.d = 'open-vimrc'
+
+nnoremap <silent> <leader>oq  :copen<CR>
+nnoremap <silent> <leader>ol  :lopen<CR>
+let g:which_key_map.o = {
+      \ 'name' : '+open',
+      \ 'q' : 'open-quickfix'    ,
+      \ 'l' : 'open-locationlist',
+      \ }
+
+" =======================================================
+" Create menus not based on existing mappings:
+" =======================================================
+" Provide commands(ex-command, <Plug>/<C-W>/<C-d> mapping, etc.)
+" and descriptions for the existing mappings.
+"
+" Note:
+" Some complicated ex-cmd may not work as expected since they'll be
+" feed into `feedkeys()`, in which case you have to define a decicated
+" Command or function wrapper to make it work with vim-which-key.
+" Ref issue #126, #133 etc.
+let g:which_key_map.b = {
+      \ 'name' : '+buffer' ,
+      \ '1' : ['b1'        , 'buffer 1']        ,
+      \ '2' : ['b2'        , 'buffer 2']        ,
+      \ 'd' : ['bd'        , 'delete-buffer']   ,
+      \ 'f' : ['bfirst'    , 'first-buffer']    ,
+      \ 'h' : ['Startify'  , 'home-buffer']     ,
+      \ 'l' : ['blast'     , 'last-buffer']     ,
+      \ 'n' : ['bnext'     , 'next-buffer']     ,
+      \ 'p' : ['bprevious' , 'previous-buffer'] ,
+      \ '?' : ['Buffers'   , 'fzf-buffer']      ,
+      \ }
+
+let g:which_key_map.l = {
+      \ 'name' : '+lsp',
+      \ 'f' : ['spacevim#lang#util#Format()'          , 'formatting']       ,
+      \ 'r' : ['spacevim#lang#util#FindReferences()'  , 'references']       ,
+      \ 'R' : ['spacevim#lang#util#Rename()'          , 'rename']           ,
+      \ 's' : ['spacevim#lang#util#DocumentSymbol()'  , 'document-symbol']  ,
+      \ 'S' : ['spacevim#lang#util#WorkspaceSymbol()' , 'workspace-symbol'] ,
+      \ 'g' : {
+        \ 'name': '+goto',
+        \ 'd' : ['spacevim#lang#util#Definition()'     , 'definition']      ,
+        \ 't' : ['spacevim#lang#util#TypeDefinition()' , 'type-definition'] ,
+        \ 'i' : ['spacevim#lang#util#Implementation()' , 'implementation']  ,
+        \ },
+      \ }

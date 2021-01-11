@@ -26,7 +26,7 @@ noremap <silent> <leader>nm :NERDTreeMirrorToggle<CR>
 " autocmd FileType go nnoremap <buffer> <silent> <leader>g :GoDef<cr>
 " autocmd FileType go nnoremap <buffer> <silent> <leader>r :GoRename<cr>
 nnoremap <buffer> <silent> <leader>g :GoDef<cr>
-nnoremap <buffer> <silent> <leader>r :GoRename<cr>
+" nnoremap <buffer> <silent> <leader>rn :GoRename<cr>
 
 
 """"""""""""""""""""""" CtrlSF settings """"""""""""""""""""""""""
@@ -35,20 +35,25 @@ vmap <leader>f <Plug>CtrlSFVwordPath
 
 
 """"""""""""""""""""""" Coc settings """"""""""""""""""""""""""
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <expr> <C-j> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+
+
 " Use <C-l> for trigger snippet expand.
-" imap <C-j> <Plug>(coc-snippets-expand)
+" imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.
 " vmap <C-j> <Plug>(coc-snippets-select)
@@ -61,9 +66,6 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
-
-" imap <C-j> <Plug>(coc-snippets-expand)
-
 
 
 " Remap keys for gotos
@@ -155,3 +157,7 @@ nnoremap <silent> [t :tabnext<CR>
 nnoremap <silent> ]t :tabprevious<CR>
 
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+noremap <silent> ':,<CR>
+
+nnoremap <silent> <leader> :<c-u>WhichKey ','<CR>

@@ -11,8 +11,8 @@ source $NVIM_HOME/plugins.vim
 call plug#end()
 source $NVIM_HOME/plugins-config.vim
 
-source $NVIM_HOME/keys.vim
 source $NVIM_HOME/functions.vim
+source $NVIM_HOME/filetype.vim
+source $NVIM_HOME/keys.vim
 " source $NVIM_HOME/coc.vim
-
 

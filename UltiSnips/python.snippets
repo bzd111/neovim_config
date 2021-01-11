@@ -191,4 +191,12 @@ snippet nose "nose set_trace" !b
 from nose.tools import set_trace; set_trace()
 endsnippet
 
+snippet forr "for i in range x"
+for ${1:i} in range(${2:x}):
+	${3}
+endsnippet
+
+snippet ip "ipdb set_trace" !b
+import ipdb; ipdb.set_trace()
+endsnippet
 # vim:ft=snippets:
