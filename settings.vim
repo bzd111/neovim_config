@@ -99,3 +99,6 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
+" set maxmempattern
+set maxmempattern=2000
+
